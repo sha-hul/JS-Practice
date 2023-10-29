@@ -121,3 +121,123 @@ var student = [
     return student[tempi].name;
   }
   console.log(studentFind())
+
+
+  //console.log('----------array.sort()===========')
+//---sort for numbers----
+// let numbers = [5, 2, 8, 1, 4];
+
+// numbers.sort(function(a, b) {
+//   console.log(a+"-"+b+":"+(a-b) ); 
+// });
+// numbers.sort((a,b)=>a-b) // ascending order
+// console.log(numbers); // Outputs: [1, 2, 4, 5, 8]
+// numbers.sort((a,b)=>b-a) //descending order
+// console.log(numbers); // Outputs: [ 8, 5, 4, 2, 1 ]
+
+// let num=[1102,213,11,1094,1999,9]
+// num.sort((a,b)=>Number(a)-Number(b));
+
+// console.log(num)
+
+//---sort for words----
+// let words = ['Shahul', 'Anom','anom', 'Head', 'Maxwell', 'Ravindra'];
+
+// words.sort();// ascending order
+// console.log(words)
+// words.sort((a,b)=> b.localeCompare(a)) //descending order
+// console.log(words)
+
+//----Sort the objects Challenge-----
+
+// const arraySortMe = [
+//   {
+//     name: "Kevi",
+//     age: 25,
+//   },
+//   {
+//     name: "Arnold",
+//     age: 6,
+//   },
+//   {
+//     name: "Sheila",
+//     age: 56,
+//   },
+// ];
+
+// arraySortMe.sort((a,b)=>a.age-b.age)
+// arraySortMe.forEach((val)=>console.log(val.name))
+
+//---Map function challenge---
+console.log('--------Map function----------')
+//area of circle
+
+let radiusArr=[1,2,3,4]
+
+let areaCircle=radiusArr.map(val=>Math.round(Math.PI*Math.pow(val,2)))
+
+console.log(areaCircle)
+
+//----Filter---
+console.log('---filter----')
+const filterArr=areaCircle.filter((val)=>val>10);
+console.log(filterArr)
+
+//---Reduce---
+
+console.log('---Reduce---')
+
+let reduceArr= ['One','two','three']
+
+const reduceRes= reduceArr.reduce((temp,val)=>temp+=val.length,0)
+//temp=0
+//temp=3
+//temp=6
+//temp=11
+console.log(reduceRes)
+
+const joinStr=reduceArr.reduce((temp,val)=>temp+=val,'')
+//temp=''
+//temp='One'
+//temp='OneTwo'
+//temp='OneTwoThree'
+
+console.log(joinStr)
+
+//---Splice()---
+
+//delete a set of element in the array
+
+let spliceArr=[12,23,34,45,56,67,78,89,90]
+//delete
+spliceArr.splice(3,2) //arg1 : index, arg2 : len to delete
+console.log(spliceArr)//[
+//   12, 23, 34, 67,
+//   78, 89, 90
+// ]
+//create
+spliceArr.splice(3,0,'Hi','I am inserted')//arg1 : index, arg2 : len to delete, arg3 to n to add the array
+console.log(spliceArr)//[ 12, 23, 34, 'Hi', 'I am inserted', 67, 78, 89, 90 ]
+//update
+let Arrsplice=spliceArr.splice(3,2,'updateindex3',{empName:'Index4 new update'})//
+console.log(spliceArr) // [
+//   12,
+//   23,
+//   34,
+//   'updateindex3',
+//   { empName: 'Index4 new update' },
+//   67,
+//   78,
+//   89,
+//   90
+// ]
+//read
+console.log(Arrsplice)//[ 'Hi', 'I am inserted' ]
+
+//---arr.slice()---
+
+let sliceArr= [1,2,3,4,5]
+
+const sliceRes= sliceArr.slice(1,4) //arg2 index-1
+
+console.log(sliceRes)// op : [ 2, 3, 4 ]
