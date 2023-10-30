@@ -376,3 +376,128 @@ function filterStudents() {
  }
 console.log(arr);
 }
+
+//-------------Athimetic calculation-------------
+
+console.log('------------Athimetic calculation-------------')
+const add=(a,b)=>a+b
+const sub=(a,b)=>a-b
+const mul=(a,b)=>a*b
+const div=(a,b)=>a/b
+const mod=(a,b)=>a%b
+
+function callbackFun(a,b,fun) {
+  return fun(a,b);
+}
+console.log(callbackFun(2,2,mul))
+
+//----------Area of rectangle--------
+
+// function areaPerimeter(l,b) {
+//   console.log(`Area of rectangle : ${l*b}`)
+//   console.log(`Area of rectangle : ${2(l+b)}`)
+// }
+
+// areaPerimeter(40,10)
+
+
+//-----Take a input and show in back end----
+
+const showDetails =()=>{
+  debugger;
+  const a1 = document.getElementById('Name').value;
+const a2 = document.getElementById('age').value;
+const a3 = document.getElementById('address').value;
+const a4 = document.getElementById('phone').value;
+
+document.write('----Form Details-----')
+document.write(`Name : ${a1}`)
+document.write(`Age : ${a2}`)
+document.write(`Address : ${a3}`)
+document.write(`Phone Number : ${a4}`)
+}
+
+//-------Print odd number from 30 to 1 reverse order---------
+
+console.log('------Print odd number from 30 to 1 reverse order------')
+let Emptyarr=[]
+for(let i=30;i>=1;i--){
+  i%2 != 0 ? Emptyarr.push(i) :false ;
+}
+
+console.log(Emptyarr)
+
+
+//---------------largest of three input--------
+
+let q=102;
+let w=42;
+let e=53;
+if((q>w)&&(q>e)){
+ console.log(q)
+}
+else if(w>q && w>e){
+  console.log(w)
+}
+else{
+  console.log(e)
+}
+
+//-------------week days-------------
+
+let weekcount= 3;
+
+switch (weekcount) {
+  case 0: console.log('Sun')
+    
+    break;
+  case 1: console.log('M')
+    
+    break;
+  case 2: console.log('Tues')
+    
+    break;
+  case 3: console.log('w')
+    
+    break;
+  case 4: console.log('Thru')
+    
+    break;
+  case 5: console.log('f')
+    
+    break;
+  case 6: console.log('Sat')
+    
+    break;
+
+  default: console.log('enter the no between 0 to 6')
+    break;
+}
+
+//-------grade question--------
+
+function checkGrade(){
+  debugger;
+  let marks= 78;
+
+  switch (true) {
+
+    case marks >= 90: console.log('Grade A')
+      
+      break;
+    case marks >= 80: console.log('Grade B')
+      
+      break;
+    case marks >= 70: console.log('Grade C')
+      
+      break;
+    case marks >= 60: console.log('Grade D')
+      
+      break;
+    case marks >= 50: console.log('Grade E')
+      break;
+  
+    default: console.log('Fail')
+      break;
+  }
+}
