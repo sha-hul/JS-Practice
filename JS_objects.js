@@ -90,17 +90,17 @@
 // //unpack the properties of the object into the distinct variable 
 
 
-// const userDet = {
-//       first: "Yash",
-//       last: "Gulati",
-//       age:19,
-//       'phoneno':7826927252,
-//       'address':{
-//         'city':'Tirupur',
-//         'street' : 'karuparayan street',
-//         'pincode':'641665'
-//       }
-//   }
+const userDet = {
+      first: "Yash",
+      last: "Gulati",
+      age:19,
+      'phoneno':7826927252,
+      'address':{
+        'city':'Tirupur',
+        'street' : 'karuparayan street',
+        'pincode':'641665'
+      }
+  }
 
 //   //to print the 3 property normal
 
@@ -118,9 +118,9 @@
 
 //   //to change the variable name
 
-//   const {first:fName, last:lName, age:Age} =userDet;
+  const {first:fName, last:lName, age:Age} =userDet;
 
-//   console.log(fName + "  "+lName+ "  "+Age)
+  console.log(fName + "  "+lName+ "  "+Age)
 
 //   //to get the nested objects
 // console.log('------------nested objects-------------')
@@ -132,7 +132,13 @@
 
 //Object Properties
 
-let dummyCar={color:'blue',type:'tata',capacity:'30L'}
+let dummyCar={color:'blue',type:'tata',capacity:'30L',capacity1:'20L'}
 console.log(Object.keys(dummyCar))
 console.log(Object.values(dummyCar))
 console.log(Object.entries(dummyCar))
+console.log(userDet.hasOwnProperty('first'));
+
+
+for (const item in dummyCar) {
+  console.log(`${item}`);
+}

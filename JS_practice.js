@@ -130,39 +130,39 @@
 
 //global scope
 
-// var Id= 23; //I can use any where in this file
+var Id= 23; //I can use any where in this file
 
-// //function scope
-// function nameEUUK() {
-//     const countryIDEUUK=[1,2,3,8,23]
-//     var countryIdEUUK=[1,2,3,8,23]
-//     console.log(countryIDEUUK)
-//     console.log(Id)
-//  //block scope   
-//     if(-Infinity){
-//         const countryName={'23':'Swedan'}
-//         var counName={'23':'Swedan'}
-//     }
-//     console.log(counName) //do not use var in case of block scope
-// }
-// nameEUUK();
 //function scope
-//console.log(countryIDEUUK);//error it is not defined
-//console.log(countryIdEUUK)//error it is not defined
+function nameEUUK() {
+    const countryIDEUUK=[1,2,3,8,23]
+    var countryIdEUUK=[1,2,3,8,23]
+    console.log(countryIDEUUK)
+    console.log(Id)
+ //block scope   
+    if(-Infinity){
+        const countryName={'23':'Swedan'}
+        var counName={'23':'Swedan'}
+    }
+    console.log(counName) //do not use var in case of block scope
+}
+nameEUUK();
+//function scope
+console.log(countryIDEUUK);//error it is not defined
+console.log(countryIdEUUK)//error it is not defined
 //block scope 
-//console.log(counName) //error bcoz we can't use any function variable out
-//console.log(countryName) // error  it is not defined
+console.log(counName) //error bcoz we can't use any function variable out
+console.log(countryName) // error  it is not defined
 
 //Lexical scope
 
-// if ('go') {
-//     const outer=10;
-//     if ('go inner') {
-//         const inner =20;
-//         console.log(outer);
-//         console.log(inner);
-//     }
-// }
+if ('go') {
+    const outer=10;
+    if ('go inner') {
+        const inner =20;
+        console.log(outer);
+        console.log(inner);
+    }
+}
 
 //Hoisting
 
@@ -208,7 +208,7 @@ const carRepair=(a,functoExecute)=>{
 }
 
 const callOwner=(a)=>{
-    if (a==true) {
+    if (a) {
         console.log('Work Done, calling the owner')
     } else {
         console.log('Work is not done, call the owner tommorrow')
@@ -249,19 +249,19 @@ closureExample(); // Outputs: "I am from outer function"
 //-----Foreach----------
 
 
-// function search(arr, key) {
-//   debugger
-//   let temp=false;
-//   // You only need to implement this function.
-//   const searchCheck=arr.forEach((val)=>{
-//     if(val==key){
-//        temp=true;
-//     }
-//   })
-//   return temp;
-// }
+function search(arr, key) {
+  debugger
+  let temp=false;
+  // You only need to implement this function.
+  const searchCheck=arr.forEach((val)=>{
+    if(val==key){
+       temp=true;
+    }
+  })
+  return temp;
+}
 
-// console.log(search([1,2,3,4],2))
+console.log(search([1,2,3,4],2))
 
 //--sort()--------
 
@@ -389,16 +389,22 @@ const mod=(a,b)=>a%b
 function callbackFun(a,b,fun) {
   return fun(a,b);
 }
-console.log(callbackFun(2,2,mul))
+console.log(callbackFun(14,5,mod))
 
 //----------Area of rectangle--------
 
-// function areaPerimeter(l,b) {
-//   console.log(`Area of rectangle : ${l*b}`)
-//   console.log(`Area of rectangle : ${2(l+b)}`)
-// }
-
-// areaPerimeter(40,10)
+function area(l,b) {
+  console.log(`Area of rectangle : ${l*b}`)
+  
+}
+function perimeter(l,b) {
+  console.log(`perimeter of rectangle : ${2*(l+b)}`)
+}
+function callback(l,b,func) {
+  return func(l,b);
+}
+callback(70,20,area)
+callback(70,20,perimeter)
 
 
 //-----Take a input and show in back end----
@@ -432,11 +438,11 @@ console.log(Emptyarr)
 
 let q=102;
 let w=42;
-let e=53;
-if((q>w)&&(q>e)){
+let e=41.2;
+if((q<w)&&(q<e)){
  console.log(q)
 }
-else if(w>q && w>e){
+else if(w<q && w<e){
   console.log(w)
 }
 else{
@@ -501,3 +507,68 @@ function checkGrade(){
       break;
   }
 }
+
+//-------month ---------
+
+let MonthIndex = 7;
+
+switch (MonthIndex) {
+  case 0: console.log('Jan')
+    break;
+  case 1: console.log('Feb')
+    break;
+  case 2: console.log('Mar')
+    break;
+  case 3: console.log('apr')
+    break;
+  case 4: console.log('amy')
+    break;
+  case 5: console.log('jun')
+    break;
+  case 6: console.log('jul')
+    break;
+  case 7: console.log('aug')
+    break;
+  case 8: console.log('sep')
+    break;
+  case 9: console.log('oct')
+    break;
+  case 10: console.log('nov')
+    break;
+  case 11: console.log('dec')
+    break;
+
+  default: console.log('Invalid')
+    break;
+}
+
+
+//-------Value of const--------------
+
+
+const PlayerNumber=8;
+
+if (1) {
+
+  console.log(PlayerNumber);
+  const PlayerNumber = 10;
+}
+// function Player() {
+//   console.log(PlayerNumber);
+//   const PlayerNumber=10;
+// }
+
+// Player();
+
+//Variables declared with let and const are also hoisted to the top of their containing block or function.
+// However, there's a key difference: they are not initialized during hoisting. Instead, they enter a "Temporal Dead Zone" (TDZ).
+// The TDZ is the period between the start of the block and the actual declaration of the variable, during which you can't access the variable. Attempting to access it during the TDZ will result in a ReferenceError
+
+var a;
+a=1;
+a++;
+console.log(a)
+
+
+
+

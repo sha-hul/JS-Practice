@@ -2,6 +2,18 @@
 // let elements=[1,4,2,3,4]
 // console.log(elements)
 
+// console.log('------Static Array-------')
+
+// let staticArr = []
+// staticArr[0] = 1;
+// staticArr.push('2')
+// staticArr.push('3')
+// staticArr.push('4')
+// staticArr.push('5')
+// staticArr.push('6')
+// staticArr.length = 4
+// console.log(staticArr)
+
 // let arr=[11,1101,10000,4,13]
 // console.log(arr.sort()) 
 // // O/P :[ 10000, 11, 1101, 13, 4 ]
@@ -34,7 +46,7 @@
 
 // console.log(_2d[3].length)
 
-// //print 3d array
+// //print 2d array
 
 // let array= [
 //     [1,2,3],
@@ -109,7 +121,6 @@ var student = [
   
   ]
  const studentFind=()=>{
-    let i=0;
     let temp=0;
     let tempi=0;
     for(let i=0;i<student.length;i++){
@@ -241,3 +252,17 @@ let sliceArr= [1,2,3,4,5]
 const sliceRes= sliceArr.slice(1,4) //arg2 index-1
 
 console.log(sliceRes)// op : [ 2, 3, 4 ]
+console.log(sliceArr.slice(1,2))// op : [ 2, 3, 4 ]
+
+sliceArr.splice(3,1,44);
+
+console.log(sliceArr);
+
+let add = sliceArr.reduce((temp,cur)=> temp+cur,0)
+console.log(add);
+
+for (const item of sliceArr) {
+    console.log(item);
+}
+
+
